@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Images</title>
+    <style>
+
+        body{
+            font-family:Helvetica;
+            background-color: #121212;
+            color: white;
+        }
+
+        a{
+            font-weight: bold;
+            color: blueviolet;
+        }
+
+        img{
+            height: 25rem;
+            width: 25rem;
+        }
+
+        .picOne{
+            border-radius: 50%;
+        }
+
+        .picTwo{
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .picBox{
+            border: solid 1rem red;
+            height: 10rem;
+            width: 10rem;
+        }
+
+        .right .picBox{
+            border: solid 1rem red;
+            height: 10rem;
+            width: 10rem;
+            position: absolute;
+        }
+
+
+
+        .wrapper{
+            display: flex;
+            width: 100%;
+            justify-content:space-evenly;
+            z-index: 10;
+        }
+
+        .wrapper > * {
+            width: 50rem;
+        }
+
+        .wrapper img{
+            height: 20rem;
+            width: 20rem;
+        }
+
+        .left .picBox{
+            overflow: clip;
+        }
+
+        .picTwox{
+            clip-path: polygon(98% 31%, 98% 7%, 36% 0, 100% 70%, 80% 88%, 39% 78%, 0 98%, 27% 46%, 0 51%, 28% 13%);
+        }
+
+        .picOpacity{
+            opacity: 0.4;
+        }
+
+        .picFilterOne{
+            filter: blur(4px);
+        }
+
+        .picFilterTwo{
+            filter: saturate(7);
+        }
+
+        .picFilterThree{
+            filter: brightness(250%);
+        }
+
+        .picTraOne{
+            transform: scaleX(-1);
+        }
+
+        .picTraTwo{
+            transform: scaleY(-1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS Styling Images</h1>
+    <p>Use the <b>border-radius</b> property to create rounded images:</p>
+    
+    <img src="pic.png" class="picOne">
+    <br><br>
+    <b>Using:
+        <br><br>
+        img {<br>
+        border-radius:50%;
+        <br>
+    }
+    </b>
+    <br><br><hr><br><br>
+
+    <p>Use <b>clip-path</b> property to create a clipping region that sets what part of an element should be shown:<br>
+        Use <a href="https://bennettfeely.com/clippy/">Clippy -- CSS clip-path maker</a> for complicated shapes.
+    </p>
+<div class="wrapper">
+    <div class="left">
+        <img src="pic.png" class="picTwo">
+        <br><br>
+        <b>Using:
+            <br><br>
+            img {<br>
+                clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            <br>
+        }
+        </b>
+    </div>
+    <div class="right">
+        <img src="pic.png" class="picTwox">
+        <br><br>
+        <b>Using:
+            <br><br>
+            img {<br>
+                clip-path: polygon(98% 31%, 98% 7%, 36% 0, 100% 70%, 80% 88%, 39% 78%, 0 98%, 27% 46%, 0 51%, 28% 13%);
+            <br>
+        }
+        </b>
+    </div>
+</div>
+
+    <br><br><hr><br><br>
+
+
+
+    <p>Use <b>overflow</b> property to set the desired behavior when content does not fit in the element's padding box
+        </p>
+        <div class="wrapper">
+        <div class="left">
+        <div class="picBox">
+            <img src="pic.png">
+            </div>
+        <br><br>
+        <b>Using:
+            <br><br>
+            div {<br>
+                overflow:hidden; / overflow:clip;
+            <br>
+        }
+        </b>
+        </div>
+        <div class="right">
+            <div class="picBox"></div>
+                <img src="pic.png">
+        </div>
+        </div>
+
+        <br><br><hr><br><br>
+
+        <p>The <b>opacity</b> property can take a value from 0.0 - 1.0. The lower value, the more transparent:</p>
+    
+        <img src="pic.png" class="picOpacity">
+        <br><br>
+        <b>Using:
+            <br><br>
+            img {<br>
+            opacity:0.4;
+            <br>
+        }
+        </b>
+        <br><br><hr><br><br>
+
+        <p>The CSS <b>filter</b> property adds visual effects (like blur and saturation) to an element.</p>
+        <div class="wrapper">
+            <div class="left">
+                <img src="pic.png" class="picFilterOne">
+                <br><br>
+                <b>Using:
+                    <br><br>
+                    img {<br>
+                        filter: blur(4px);
+                    <br>
+                }
+                </b>
+            </div>
+            <div class="middle">
+                <img src="pic.png" class="picFilterTwo">
+                <br><br>
+                <b>Using:
+                    <br><br>
+                    img {<br>
+                        filter: saturate(7);
+                    <br>
+                }
+                </b>
+            </div>
+            <div class="right">
+                <img src="pic.png" class="picFilterThree">
+                <br><br>
+                <b>Using:
+                    <br><br>
+                    img {<br>
+                        filter: brightness(250%);
+                    <br>
+                }
+                </b>
+            </div>
+        </div>
+<br><br><hr><br><br>
+
+
+
+
+        <div class="wrapper">
+            <div class="ba">
+                <img src="image.png" class="picTraZero">
+                <br><br>
+                <b>
+                Normal Image
+                </b>
+            </div>
+
+            <div class="left">
+                <img src="image.png" class="picTraOne">
+                <br><br>
+                <b>Using:
+                    <br><br>
+                    img {<br>
+                        transform: scaleX(-1);
+                    <br>
+                }
+                </b>
+            </div>
+            <div class="right">
+                <img src="image.png" class="picTraTwo">
+                <br><br>
+                <b>Using:
+                    <br><br>
+                    img {<br>
+                        transform:scaleY(-1);
+                    <br>
+                }
+                </b>
+            </div>
+        </div>
+
+        <br><br><hr><br><br>
+
+        <a href="activity.html">Next</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+body{
+    background-color: #121212;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap
+}
+/*above not necessary*/
+
+img{
+    height: 10rem;
+    width: 10rem;
+    margin: 2rem;
+}
+
+.picOne{
+    border-radius: 50%;
+}
+
+.picTwo{
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.picThree{
+    opacity: 0.4;
+}
+
+.picFour{
+    filter: brightness(300%);
+}
+
+.picFive{
+    transform: scaleY(-1);
+}
+
