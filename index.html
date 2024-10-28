@@ -55,7 +55,8 @@
         }
 
         .wrapper > * {
-            width: 50rem;
+            margin-right: 11rem;
+            width: 25rem;
         }
 
         .wrapper img{
@@ -95,6 +96,63 @@
             transform: scaleY(-1);
         }
 
+        .picTraZeroTwo{
+            transform: rotate(20deg);
+        }
+
+        .picTraOneTwo{
+            transform: skewY(20deg);
+        }
+
+        .picTraTwoTwo{
+            transform: scaleX(1.5);
+        }
+
+.picExtra{
+    height: 30rem;
+    width: 30rem;
+    transform: translateX(-15%);
+    transition: 0.5s linear;
+}
+
+.wrap{
+    margin-left: 5rem;
+    border: solid;
+    width: 25rem;
+    height: 25rem;
+    transition: 0.5s linear;
+    transform: perspective(400px) rotateY(8deg);
+    overflow: clip;
+}
+
+.wrap:hover{
+    transition: 0.5s linear;
+    transform: perspective(400px) rotateY(-8deg);
+
+    .picExtra{
+        transform: translateX(-1%);
+        transition: 0.5s linear;
+    }
+}
+
+
+
+.aha {
+    animation: light 2s infinite ease-in-out;
+    animation-direction: alternate;
+    mask:
+    linear-gradient(135deg,#000c 40%,#000,#000c 60%)
+    100% 100%/240% 240%;
+}
+
+@keyframes light{
+    100%{
+  --i: -1;
+  mask-position: 0 0;
+    }
+}
+
+
             @media (max-width: 900px){
     img{
         height: 10rem;
@@ -115,6 +173,17 @@
             min-height: 15rem;
             min-width: 15rem;
         }        
+
+        .picExtra{
+            height: 20rem;
+            width: 20rem;
+        }
+
+        .wrap{
+            height: 15rem;
+            width: 15rem;
+        }
+
 
 }
         
@@ -244,9 +313,8 @@
 <br><br><hr><br><br>
 
 
-
-
-        <div class="wrapper">
+<p>The CSS <b>transform</b> applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc. elements.</p>
+        <div class="wrapper">   
             <div class="ba">
                 <img src="image.png" class="picTraZero">
                 <br><br>
@@ -278,8 +346,113 @@
                 </b>
             </div>
         </div>
+<br><br><br><br>
+        <div class="wrapper">   
+            <div class="ba">
+                <img src="image.png" class="picTraZeroTwo">
+                <br><br>
+                <b>
+                    Using:
+                    <br><br>
+                    img {<br>
+                        transform: rotate(20deg);
+                    <br>
+                }
+                </b>
+            </div>
+
+            <div class="left">
+                <img src="image.png" class="picTraOneTwo">
+                <br><br>
+                <b>Using:
+                    <br><br>
+                    img {<br>
+                        transform: skewY(20deg);
+                    <br>
+                }
+                </b>
+            </div>
+            <div class="right">
+                <img src="image.png" class="picTraTwoTwo">
+                <br><br>
+                <b>Using:
+                    <br><br>
+                    img {<br>
+                        transform: scaleX(1.5);
+                    <br>
+                }
+                </b>
+            </div>
+        </div>
 
         <br><br><hr><br><br>
+
+        <p>You can use transition and transform at the same time to give the image more depth.</p>
+    
+<div class="wrap">
+    <img src="image.png" class="picExtra">
+</div><br><br>
+<div class="wrap">
+    <img src="pic.png" class="picExtra">
+</div>
+        <br><br>
+        <b>Using:
+            <br><br>
+            <pre>
+        img{
+            height: 30rem;
+            width: 30rem;
+            transform: translateX(-15%);
+            transition: 0.5s linear;
+        }
+        
+        .container{
+            margin-left: 5rem;
+            border: solid;
+            width: 25rem;
+            height: 25rem;
+            transition: 0.5s linear;
+            transform: perspective(400px) rotateY(8deg);
+            overflow: clip;
+        }
+        
+        .container:hover{
+            transition: 0.5s linear;
+            transform: perspective(400px) rotateY(-8deg);
+            
+            img{
+                transform: translateX(-1%);
+                transition: 0.5s linear;
+            }
+        }
+        </pre>
+</b>
+<br><br><hr><br><br>
+
+<p>You can use animation to make the image shine</p>
+    
+<img src="pic.png" class="aha">
+<br><br>
+<b>Using:
+    <br><br>
+    <pre>
+        img {
+            animation: light 2s infinite ease-in-out;
+            animation-direction: alternate;
+            mask:
+            linear-gradient(135deg,#000c 40%,#000,#000c 60%)
+            100% 100%/240% 240%;
+        }
+        
+        @keyframes light{
+            100%{
+          --i: -1;
+          mask-position: 0 0;
+            }
+        }
+</pre>
+</b>
+<br><br><hr><br><br>
 
         <a href="activity.html">Next</a>
 </body>
