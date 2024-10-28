@@ -399,33 +399,33 @@
         <b>Using:
             <br><br>
             <pre>
-        img{
-            height: 30rem;
-            width: 30rem;
-            transform: translateX(-15%);
-            transition: 0.5s linear;
-        }
-        
-        .container{
-            margin-left: 5rem;
-            border: solid;
-            width: 25rem;
-            height: 25rem;
-            transition: 0.5s linear;
-            transform: perspective(400px) rotateY(8deg);
-            overflow: clip;
-        }
-        
-        .container:hover{
-            transition: 0.5s linear;
-            transform: perspective(400px) rotateY(-8deg);
-            
-            img{
-                transform: translateX(-1%);
-                transition: 0.5s linear;
-            }
-        }
-        </pre>
+img{
+    height: 30rem;
+    width: 30rem;
+    transform: translateX(-15%);
+    transition: 0.5s linear;
+}
+
+.container{
+    margin-left: 5rem;
+    border: solid;
+    width: 25rem;
+    height: 25rem;
+    transition: 0.5s linear;
+    transform: perspective(400px) rotateY(8deg);
+    overflow: clip;
+}
+
+.container:hover{
+    transition: 0.5s linear;
+    transform: perspective(400px) rotateY(-8deg);
+    
+    img{
+        transform: translateX(-1%);
+        transition: 0.5s linear;
+    }
+}
+</pre>
 </b>
 <br><br><hr><br><br>
 
@@ -436,20 +436,20 @@
 <b>Using:
     <br><br>
     <pre>
-        img {
-            animation: light 2s infinite ease-in-out;
-            animation-direction: alternate;
-            mask:
-            linear-gradient(135deg,#000c 40%,#000,#000c 60%)
-            100% 100%/240% 240%;
-        }
-        
-        @keyframes light{
-            100%{
-          --i: -1;
-          mask-position: 0 0;
-            }
-        }
+img {
+    animation: light 2s infinite ease-in-out;
+    animation-direction: alternate;
+    mask:
+    linear-gradient(135deg,#000c 40%,#000,#000c 60%)
+    100% 100%/240% 240%;
+}
+
+@keyframes light{
+    100%{
+    --i: -1;
+    mask-position: 0 0;
+    }
+}
 </pre>
 </b>
 <br><br><hr><br><br>
